@@ -19,3 +19,24 @@ export const TRACKS = [
   { id: 6, sdg: 11, title: 'Sustainable Cities', theme: 'prosperity', color: '#fd9d24', blurb: 'Smarter commutes, safer streets and flood-ready neighborhoods.' },
   { id: 7, sdg: 13, title: 'Climate Action', theme: 'planet', color: '#3f7e44', blurb: 'Make climate data understandable and turn it into everyday actions.' },
   { id: 8, sdg: 17, title: 'Partnerships for the Goals', theme: 'people', color: '#19486a', blurb: 'Connect volunteers, orgs and donors around shared causes.' },
+]
+
+export const TRACK_FILTERS = [
+  { value: 'all', label: 'All' },
+  { value: 'people', label: 'People' },
+  { value: 'planet', label: 'Planet' },
+  { value: 'prosperity', label: 'Prosperity' },
+]
+
+export const TIMELINE = [
+  { day: 'Mon · Mar 24', title: 'Kickoff', detail: 'Opening talk, track reveal and team formation.' },
+  { day: 'Tue · Mar 25', title: 'Ideation Day', detail: 'Problem framing workshop and mentor office hours.' },
+  { day: 'Wed · Mar 26', title: 'Build Sprint 1', detail: 'Design + prototype. Check-in with your assigned mentor.' },
+  { day: 'Thu · Mar 27', title: 'Build Sprint 2', detail: 'Core features done. Tech talk on deploying for free.' },
+  { day: 'Fri · Mar 28', title: 'Polish & Pitch Prep', detail: 'Pitch clinic and demo dry-runs.' },
+  { day: 'Sat · Mar 29', title: 'Submission', detail: 'Repos and demo videos due at 11:59 PM.' },
+  { day: 'Sun · Mar 30', title: 'Demo Day', detail: 'Top teams pitch live, awarding and closing.' },
+]
+
+export const PRIZES = [
+  { place: 'Champion', amount: '₱15,000', perks: ['Trophy + certificates', 'Swag pack for the team', 'Feature on the org page'] },

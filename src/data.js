@@ -40,3 +40,23 @@ export const TIMELINE = [
 
 export const PRIZES = [
   { place: 'Champion', amount: '₱15,000', perks: ['Trophy + certificates', 'Swag pack for the team', 'Feature on the org page'] },
+  { place: '1st Runner-up', amount: '₱10,000', perks: ['Certificates', 'Swag pack for the team'] },
+  { place: '2nd Runner-up', amount: '₱5,000', perks: ['Certificates', 'Stickers + shirts'] },
+]
+
+export const MENTORS = [
+  { name: 'Mentor profile A', role: 'Frontend Engineering', org: 'Illustrative role' },
+  { name: 'Mentor profile B', role: 'Product Design', org: 'Illustrative role' },
+  { name: 'Mentor profile C', role: 'Cloud Engineering', org: 'Illustrative role' },
+  { name: 'Mentor profile D', role: 'Data Science', org: 'Illustrative role' },
+  { name: 'Mentor profile E', role: 'Mobile Development', org: 'Illustrative role' },
+  { name: 'Mentor profile F', role: 'Startup Strategy', org: 'Illustrative role' },
+]
+
+export const FAQS = [
+  { q: 'Who can join?', a: 'Any college student in the Philippines. You don\'t need to be a CS or IT major.' },
+  { q: 'How big can my team be?', a: 'Teams of 2 to 5 members. Solo entries are not accepted, but you can find teammates on kickoff day.' },
+  { q: 'Is it online or onsite?', a: 'Hybrid. Kickoff and Demo Day are onsite, build days are online.' },
+  { q: 'Do I need to know how to code?', a: 'At least one member should be able to build a prototype. Designers and researchers are very welcome.' },
+  { q: 'How much is the registration fee?', a: 'It\'s free!' },
+]

@@ -28,3 +28,18 @@ export function validateRegistration(form) {
     else emails.add(email)
 
     if (!school) memberErrors.school = 'Enter this member’s school.'
+    else if (school.length > 120) memberErrors.school = 'Use 120 characters or fewer.'
+
+    errors.members[index] = memberErrors
+  })
+
+  if (!form.agree) errors.agree = 'Accept the code of conduct to continue.'
+
+  const hasErrors =
+    errors.teamName ||
+    errors.track ||
+    errors.agree ||
+    errors.members.some((member) => Object.keys(member).length)
+
+  return hasErrors ? errors : null
+}

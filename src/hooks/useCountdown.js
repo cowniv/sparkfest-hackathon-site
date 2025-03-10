@@ -11,3 +11,15 @@ export function getRemaining(target, now = Date.now()) {
   }
 }
 
+// Ticks every second until the target date is reached.
+export default function useCountdown(target) {
+  const [time, setTime] = useState(() => getRemaining(target))
+
+  useEffect(() => {
+    if (time.done) return
+    const id = setInterval(() => setTime(getRemaining(target)), 1000)
+    return () => clearInterval(id)
+  }, [target, time.done])
+
+  return time
+}

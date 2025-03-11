@@ -18,3 +18,13 @@ describe('getRemaining', () => {
 
   it('clamps past events to zero', () => {
     const now = Date.parse('2025-03-25T09:00:00+08:00')
+
+    expect(getRemaining('2025-03-24T09:00:00+08:00', now)).toEqual({
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      done: true,
+    })
+  })
+})

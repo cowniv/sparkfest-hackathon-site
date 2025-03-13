@@ -24,3 +24,16 @@ export default function Faq() {
               >
                 {item.q}
                 <span className="faq-indicator" aria-hidden="true"><span /></span>
+              </button>
+              {open && (
+                <div id={panelId} role="region" aria-labelledby={triggerId}>
+                  <p>{item.a}</p>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </Section>
+  )
+}

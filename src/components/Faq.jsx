@@ -11,3 +11,16 @@ export default function Faq() {
       <div className="faq">
         {FAQS.map((item, i) => {
           const open = openIndex === i
+          const triggerId = `${baseId}-question-${i}`
+          const panelId = `${baseId}-answer-${i}`
+          return (
+            <div key={item.q} className={open ? 'faq-item open' : 'faq-item'}>
+              <button
+                id={triggerId}
+                type="button"
+                aria-expanded={open}
+                aria-controls={panelId}
+                onClick={() => setOpenIndex(open ? null : i)}
+              >
+                {item.q}
+                <span className="faq-indicator" aria-hidden="true"><span /></span>

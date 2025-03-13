@@ -9,3 +9,13 @@ describe('Faq', () => {
     const user = userEvent.setup()
     render(<Faq />)
     const question = screen.getByRole('button', { name: 'Who can join?' })
+
+    expect(question).toHaveAttribute('aria-expanded', 'false')
+    await user.click(question)
+
+    expect(question).toHaveAttribute('aria-expanded', 'true')
+    const answer = screen.getByRole('region', { name: 'Who can join?' })
+    expect(question).toHaveAttribute('aria-controls', answer.id)
+  })
+
+  it('keeps only one answer open', async () => {

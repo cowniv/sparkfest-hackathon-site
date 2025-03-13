@@ -19,3 +19,13 @@ describe('Faq', () => {
   })
 
   it('keeps only one answer open', async () => {
+    const user = userEvent.setup()
+    render(<Faq />)
+
+    await user.click(screen.getByRole('button', { name: 'Who can join?' }))
+    await user.click(screen.getByRole('button', { name: 'Is it online or onsite?' }))
+
+    expect(screen.queryByRole('region', { name: 'Who can join?' })).not.toBeInTheDocument()
+    expect(screen.getByRole('region', { name: 'Is it online or onsite?' })).toBeInTheDocument()
+  })
+})

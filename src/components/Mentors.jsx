@@ -9,3 +9,13 @@ export default function Mentors() {
       <div className="grid">
         {MENTORS.map((m) => (
           <div key={m.name} className="mentor">
+            <div className="avatar">{initials(m.name)}</div>
+            <h3>{m.name}</h3>
+            <p>{m.role}</p>
+            <small>{m.org}</small>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )
+}

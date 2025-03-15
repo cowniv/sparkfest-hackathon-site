@@ -12,3 +12,17 @@ function TimeBox({ value, label }) {
 
 export default function Hero() {
   const { days, hours, minutes, seconds, done } = useCountdown(EVENT_START)
+
+  return (
+    <section id="top" className="hero">
+      <div className="container">
+        <p className="eyebrow">A one-week hackathon for the SDGs</p>
+        <h1>Spark ideas. <br /> Build for good.</h1>
+        <p className="hero-text">
+          Form a team, pick a Sustainable Development Goal, and ship a working prototype in seven days.
+        </p>
+        <p className="practice-note">Independent UI/UX practice rebuild. Event details below are retained as a portfolio demonstration.</p>
+        {done ? (
+          <p className="event-status" role="status">Sparkfest 2025 has concluded. Explore the archived event flow below.</p>
+        ) : (
+          <div className="countdown" aria-label="Countdown to kickoff">

@@ -26,3 +26,17 @@ export default function Hero() {
           <p className="event-status" role="status">Sparkfest 2025 has concluded. Explore the archived event flow below.</p>
         ) : (
           <div className="countdown" aria-label="Countdown to kickoff">
+            <TimeBox value={days} label="days" />
+            <TimeBox value={hours} label="hours" />
+            <TimeBox value={minutes} label="mins" />
+            <TimeBox value={seconds} label="secs" />
+          </div>
+        )}
+        <div className="hero-actions">
+          <a href="#register" className="btn">Try the registration demo</a>
+          <a href="#tracks" className="btn btn-ghost">See the tracks</a>
+        </div>
+      </div>
+    </section>
+  )
+}

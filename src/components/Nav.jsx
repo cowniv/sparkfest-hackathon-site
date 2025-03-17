@@ -36,3 +36,22 @@ export default function Nav() {
         </button>
         <nav
           id="primary-navigation"
+          aria-label="Primary navigation"
+          className={open ? 'nav-links open' : 'nav-links'}
+        >
+          {SECTIONS.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className={active === s.id ? 'active' : ''}
+              aria-current={active === s.id ? 'location' : undefined}
+              onClick={() => setOpen(false)}
+            >
+              {s.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+  )
+}

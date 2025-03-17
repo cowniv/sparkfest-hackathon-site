@@ -17,3 +17,22 @@ export default function Nav() {
   }, [])
 
   return (
+    <header className="nav">
+      <div className="container nav-inner">
+        <a href="#top" className="logo" aria-label="Sparkfest home">spark<span>fest</span></a>
+        <button
+          className="menu-btn"
+          type="button"
+          onClick={() => setOpen((current) => !current)}
+          aria-expanded={open}
+          aria-controls="primary-navigation"
+          aria-label={open ? 'Close navigation' : 'Open navigation'}
+        >
+          <span className="menu-icon" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+        </button>
+        <nav
+          id="primary-navigation"

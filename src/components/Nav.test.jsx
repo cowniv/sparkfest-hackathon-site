@@ -18,3 +18,12 @@ describe('Nav', () => {
   it('opens, closes, and escapes the mobile navigation', async () => {
     const user = userEvent.setup()
     render(<Nav />)
+    const trigger = screen.getByRole('button', { name: 'Open navigation' })
+
+    await user.click(trigger)
+    expect(screen.getByRole('button', { name: 'Close navigation' })).toHaveAttribute('aria-expanded', 'true')
+
+    await user.keyboard('{Escape}')
+    expect(screen.getByRole('button', { name: 'Open navigation' })).toHaveAttribute('aria-expanded', 'false')
+  })
+})

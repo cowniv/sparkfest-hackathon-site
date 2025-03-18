@@ -8,3 +8,13 @@ vi.mock('../hooks/useScrollSpy.js', () => ({
   default: () => 'tracks',
 }))
 
+describe('Nav', () => {
+  it('announces the current section', () => {
+    render(<Nav />)
+
+    expect(screen.getByRole('link', { name: 'Tracks' })).toHaveAttribute('aria-current', 'location')
+  })
+
+  it('opens, closes, and escapes the mobile navigation', async () => {
+    const user = userEvent.setup()
+    render(<Nav />)

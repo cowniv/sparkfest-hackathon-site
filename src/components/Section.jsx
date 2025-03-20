@@ -5,3 +5,9 @@ export default function Section({ id, title, subtitle, children }) {
     <section id={id} className="section" aria-labelledby={titleId}>
       <div className="container">
         <h2 id={titleId} className="section-title">{title}</h2>
+        {subtitle && <p className="section-sub">{subtitle}</p>}
+        {children}
+      </div>
+    </section>
+  )
+}

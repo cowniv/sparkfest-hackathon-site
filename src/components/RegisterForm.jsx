@@ -126,3 +126,66 @@ export default function RegisterForm() {
                 required
                 aria-invalid={Boolean(memberErr(i, 'name'))}
                 aria-describedby={memberErr(i, 'name') ? `member-${i}-name-error` : undefined}
+                onChange={(e) => updateMember(i, 'name', e.target.value)}
+              />
+              {memberErr(i, 'name') && <span id={`member-${i}-name-error`} className="error">{memberErr(i, 'name')}</span>}
+            </div>
+            <div className="field">
+              <label htmlFor={`member-${i}-email`}>Email</label>
+              <input
+                id={`member-${i}-email`}
+                name={`members.${i}.email`}
+                type="email"
+                inputMode="email"
+                value={m.email}
+                maxLength="254"
+                required
+                aria-invalid={Boolean(memberErr(i, 'email'))}
+                aria-describedby={memberErr(i, 'email') ? `member-${i}-email-error` : undefined}
+                onChange={(e) => updateMember(i, 'email', e.target.value)}
+              />
+              {memberErr(i, 'email') && <span id={`member-${i}-email-error`} className="error">{memberErr(i, 'email')}</span>}
+            </div>
+            <div className="field">
+              <label htmlFor={`member-${i}-school`}>School</label>
+              <input
+                id={`member-${i}-school`}
+                name={`members.${i}.school`}
+                value={m.school}
+                maxLength="120"
+                required
+                aria-invalid={Boolean(memberErr(i, 'school'))}
+                aria-describedby={memberErr(i, 'school') ? `member-${i}-school-error` : undefined}
+                onChange={(e) => updateMember(i, 'school', e.target.value)}
+              />
+              {memberErr(i, 'school') && <span id={`member-${i}-school-error`} className="error">{memberErr(i, 'school')}</span>}
+            </div>
+            {form.members.length > MIN && (
+              <button type="button" className="remove" onClick={() => removeMember(i)} aria-label={`Remove member ${i + 1}`}>Remove member</button>
+            )}
+          </fieldset>
+        ))}
+        {form.members.length < MAX && (
+          <button type="button" className="btn btn-ghost" onClick={addMember}>Add team member</button>
+        )}
+
+        <label className="check" htmlFor="code-of-conduct">
+          <input
+            id="code-of-conduct"
+            name="agree"
+            type="checkbox"
+            checked={form.agree}
+            required
+            aria-invalid={Boolean(errors?.agree)}
+            aria-describedby={errors?.agree ? 'code-of-conduct-error' : undefined}
+            onChange={(e) => update('agree', e.target.checked)}
+          />
+          Our team agrees to the code of conduct.
+        </label>
+        {errors?.agree && <span id="code-of-conduct-error" className="error">{errors.agree}</span>}
+
+        <button type="submit" className="btn">Submit registration</button>
+      </form>
+    </Section>
+  )
+}

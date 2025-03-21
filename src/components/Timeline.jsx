@@ -9,3 +9,13 @@ export default function Timeline() {
           <li key={item.day}>
             <span className="dot">{i + 1}</span>
             <div>
+              <small>{item.day}</small>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </Section>
+  )
+}

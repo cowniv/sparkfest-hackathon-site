@@ -25,3 +25,16 @@ export default function Tracks() {
             type="button"
             className={filter === f.value ? 'chip active' : 'chip'}
             aria-pressed={filter === f.value}
+            onClick={() => setFilter(f.value)}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+      <p className="filter-status" aria-live="polite">Showing {shown.length} challenge tracks.</p>
+      <div className="grid" aria-label="Challenge track results">
+        {shown.map((t) => <TrackCard key={t.id} track={t} />)}
+      </div>
+    </Section>
+  )
+}

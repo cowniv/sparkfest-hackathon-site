@@ -12,3 +12,16 @@ function TrackCard({ track }) {
   )
 }
 
+export default function Tracks() {
+  const [filter, setFilter] = useState('all')
+  const shown = filter === 'all' ? TRACKS : TRACKS.filter((t) => t.theme === filter)
+
+  return (
+    <Section id="tracks" title="Challenge Tracks" subtitle="Pick one SDG your team wants to tackle.">
+      <div className="chips" role="group" aria-label="Filter challenge tracks">
+        {TRACK_FILTERS.map((f) => (
+          <button
+            key={f.value}
+            type="button"
+            className={filter === f.value ? 'chip active' : 'chip'}
+            aria-pressed={filter === f.value}

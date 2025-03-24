@@ -18,3 +18,12 @@ export default function App() {
         <Timeline />
         <Prizes />
         <Mentors />
+        <Faq />
+        <RegisterForm />
+      </main>
+      <footer className="footer">
+        <p>Independent Sparkfest 2025 practice rebuild · Not an official registration portal</p>
+      </footer>
+    </>
+  )
+}

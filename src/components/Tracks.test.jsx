@@ -10,3 +10,14 @@ describe('Tracks', () => {
     render(<Tracks />)
 
     const all = screen.getByRole('button', { name: 'All' })
+    const planet = screen.getByRole('button', { name: 'Planet' })
+    expect(all).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('Showing 8 challenge tracks.')).toBeInTheDocument()
+
+    await user.click(planet)
+
+    expect(planet).toHaveAttribute('aria-pressed', 'true')
+    expect(all).toHaveAttribute('aria-pressed', 'false')
+    expect(screen.getByText('Showing 3 challenge tracks.')).toBeInTheDocument()
+  })
+})

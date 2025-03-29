@@ -26,3 +26,17 @@ npm run dev
 
 ## Verify
 
+```bash
+npm test
+npm run build
+```
+
+## What I practiced
+
+- Splitting a page into reusable components with props
+- Managing intervals and cleanup with `useEffect`
+- Writing custom hooks (`useCountdown`, `useScrollSpy`)
+- Dynamic form fields stored as an array in state
+- Accessible validation and focus recovery
+- Component and utility testing with Vitest and Testing Library
+- Continuous verification with GitHub Actions
